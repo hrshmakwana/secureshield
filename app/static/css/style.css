@@ -1,0 +1,14 @@
+body { background-color: #0f1724; color: #f8f9fa; }
+.navbar { background: linear-gradient(90deg, #0b1020 0%, #1f2940 100%); }
+.card { background-color: #182235; border: 1px solid #22304b; color: #e6e9ef; }
+.table { color: #e6e9ef; }
+.table thead { background-color: #11182a; }
+.alert { border-radius: 10px; }
+.btn-primary { background: linear-gradient(90deg, #2563eb, #1d4ed8); border: 0; }
+.btn-outline-light { border-color: #4b5563; color: #e6e9ef; }
+input, select, textarea { background-color: #11182a !important; color: #f1f5f9 !important; border: 1px solid #1f2a40 !important; }
+
+.result-card { border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); text-transform: uppercase; letter-spacing: 0.5px; }
+.card-safe { background: linear-gradient(135deg, #0f3b2c, #0f5132); border-color: #1f6f46; color: #d7ffe5; }
+.card-warn { background: linear-gradient(135deg, #3b2f0f, #8a6d1f); border-color: #c9a227; color: #fff7d6; }
+.card-risk { background: linear-gradient(135deg, #3f0f1f, #6f1f2f); border-color: #c53030; color: #ffd6d9; }

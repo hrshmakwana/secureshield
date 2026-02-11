@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card p-4">
+      <h4 class="mb-3">Web Vulnerability Scan</h4>
+      <form method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="mb-3">
+          <label class="form-label">Target URL</label>
+          <input type="url" name="target_url" class="form-control" placeholder="https://example.com/page?id=1" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Auth Cookie (optional)</label>
+          <input type="text" name="cookie_header" class="form-control" placeholder="session=abc; csrftoken=xyz">
+          <small class="text-muted">Sent as Cookie header only for this scan.</small>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="1" id="dom_scan" name="dom_scan" checked>
+          <label class="form-check-label" for="dom_scan">Enable DOM XSS (headless) if available</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Run Scan</button>
+      </form>
+      <p class="text-muted mt-3 mb-0">Includes SQLi & XSS payload checks, same-host crawl, timing anomaly heuristic, optional DOM scan.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

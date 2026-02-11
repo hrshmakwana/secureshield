@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-7">
+    <div class="card p-4">
+      <h4 class="mb-3">Upload File Baseline</h4>
+      <form action="" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="mb-3">
+          <label class="form-label">Select File</label>
+          <input class="form-control" type="file" name="file" required>
+          <small class="text-muted">Allowed: {{ app_config['ALLOWED_EXTENSIONS'] | join(', ') }}. Max 10MB.</small>
+        </div>
+        <button class="btn btn-primary" type="submit">Save Baseline</button>
+        <a class="btn btn-outline-light ms-2" href="{{ url_for('file.list_files') }}">Back</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

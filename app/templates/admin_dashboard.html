@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 class="mb-3">Admin Dashboard</h3>
+<div class="row g-3">
+  <div class="col-lg-4">
+    <div class="card p-3 h-100">
+      <h6>Recent Users</h6>
+      <ul class="list-group list-group-flush">
+        {% for u in users %}
+        <li class="list-group-item bg-transparent text-light d-flex justify-content-between">
+          <span>{{ u.username }}</span>
+          <span class="badge bg-secondary">{{ u.role }}</span>
+        </li>
+        {% else %}
+        <li class="list-group-item bg-transparent text-muted">No users.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card p-3 h-100">
+      <h6>Recent Scans</h6>
+      <ul class="list-group list-group-flush">
+        {% for s in scans %}
+        <li class="list-group-item bg-transparent text-light">
+          <div class="fw-semibold text-truncate">{{ s.target_url }}</div>
+          <small class="text-muted">{{ s.scan_date.strftime('%Y-%m-%d') }} • {{ s.severity }}</small>
+        </li>
+        {% else %}
+        <li class="list-group-item bg-transparent text-muted">No scans.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card p-3 h-100">
+      <h6>Activity Logs</h6>
+      <ul class="list-group list-group-flush" style="max-height: 320px; overflow-y: auto;">
+        {% for log in logs %}
+        <li class="list-group-item bg-transparent text-light">
+          <div>{{ log.action }}</div>
+          <small class="text-muted">{{ log.timestamp.strftime('%Y-%m-%d %H:%M') }} • IP {{ log.ip_address or 'n/a' }}</small>
+        </li>
+        {% else %}
+        <li class="list-group-item bg-transparent text-muted">No logs.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

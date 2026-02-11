@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+  <h1 class="display-5 fw-bold">SecureShield</h1>
+  <p class="lead">Web-based cybersecurity monitoring for file integrity and vulnerability scanning.</p>
+  <div class="mt-4">
+    <a class="btn btn-primary btn-lg me-2" href="{{ url_for('auth.register') }}">Get Started</a>
+    <a class="btn btn-outline-light btn-lg" href="{{ url_for('auth.login') }}">Login</a>
+  </div>
+  <div class="row mt-5 g-3">
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>File Integrity Monitoring</h5>
+        <p>Baseline SHA-256 hashes, detect modifications, and view history.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>Web Vulnerability Scanning</h5>
+        <p>Quick checks for SQL Injection & XSS with structured results.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 h-100">
+        <h5>Reporting & Logs</h5>
+        <p>Downloadable PDF reports and complete activity logging.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
