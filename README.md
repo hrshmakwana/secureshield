@@ -29,7 +29,6 @@ secureshield/
 ## Quick Start
 1. **Create env & install deps**
    ```bash
-   cd secureshield
    python -m venv .venv
    source .venv/bin/activate
    pip install -r requirements.txt
